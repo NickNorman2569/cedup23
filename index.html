@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -45,6 +46,8 @@
 
 <main>
 
+<!-- BLOCO -->
+
 <section class="bloco">
 
 <div class="texto">
@@ -63,7 +66,31 @@ preparando estudantes para o mercado de trabalho.
 
 </section>
 
-<section class="cards">
+<!-- CARROSSEL -->
+
+<section class="cards" id="carousel">
+
+<div class="card">
+<div class="card-img"></div>
+<h3>Curso 1</h3>
+</div>
+
+<div class="card">
+<div class="card-img"></div>
+<h3>Curso 2</h3>
+</div>
+
+<div class="card">
+<div class="card-img"></div>
+<h3>Curso 3</h3>
+</div>
+
+<div class="card">
+<div class="card-img"></div>
+<h3>Curso 4</h3>
+</div>
+
+<!-- duplicados para loop -->
 
 <div class="card">
 <div class="card-img"></div>
@@ -95,12 +122,35 @@ preparando estudantes para o mercado de trabalho.
 
 <script>
 
+/* MENU HAMBURGER */
+
 function toggleMenu(){
 const menu = document.getElementById("menu");
 menu.classList.toggle("ativo");
 }
 
+/* CARROSSEL INFINITO */
+
+const carousel = document.getElementById("carousel");
+
+let scrollPosition = 0;
+
+function autoScroll(){
+
+scrollPosition += 1;
+
+if(scrollPosition >= carousel.scrollWidth / 2){
+scrollPosition = 0;
+}
+
+carousel.scrollLeft = scrollPosition;
+
+}
+
+setInterval(autoScroll, 20);
+
 </script>
 
 </body>
 </html>
+```
