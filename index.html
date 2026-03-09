@@ -15,10 +15,12 @@
 <body>
 
 <header class="hero">
+
 <div class="hero-box">
 <h1>CEDUP Curitibanos</h1>
 <p>Centro de Educação Profissional</p>
 </div>
+
 </header>
 
 <div class="menu-container">
@@ -58,7 +60,9 @@ preparando estudantes para o mercado de trabalho.
 
 </section>
 
-<section class="cards" id="carousel">
+<section class="carousel-container">
+
+<div class="cards" id="carousel">
 
 <div class="card">
 <div class="card-img"></div>
@@ -98,6 +102,8 @@ preparando estudantes para o mercado de trabalho.
 <div class="card">
 <div class="card-img"></div>
 <h3>Curso 4</h3>
+</div>
+
 </div>
 
 </section>
@@ -110,26 +116,48 @@ preparando estudantes para o mercado de trabalho.
 
 <script>
 
+/* MENU */
+
 function toggleMenu(){
-const menu = document.getElementById("menu");
-menu.classList.toggle("ativo");
+const menu=document.getElementById("menu")
+menu.classList.toggle("ativo")
 }
 
-const carousel = document.getElementById("carousel");
+/* CARROSSEL */
 
-function autoScroll(){
+const slider=document.getElementById("carousel")
 
-carousel.scrollLeft += 0.4;
+let isDown=false
+let startX
+let scrollLeft
 
-if(carousel.scrollLeft >= carousel.scrollWidth / 2){
-carousel.scrollLeft = 0;
-}
+slider.addEventListener("mousedown",e=>{
+isDown=true
+startX=e.pageX-slider.offsetLeft
+scrollLeft=slider.scrollLeft
+})
 
-requestAnimationFrame(autoScroll);
+slider.addEventListener("mouseleave",()=>{isDown=false})
+slider.addEventListener("mouseup",()=>{isDown=false})
 
-}
+slider.addEventListener("mousemove",e=>{
+if(!isDown) return
+e.preventDefault()
+const x=e.pageX-slider.offsetLeft
+const walk=(x-startX)*2
+slider.scrollLeft=scrollLeft-walk
+})
 
-autoScroll();
+slider.addEventListener("touchstart",e=>{
+startX=e.touches[0].pageX
+scrollLeft=slider.scrollLeft
+})
+
+slider.addEventListener("touchmove",e=>{
+const x=e.touches[0].pageX
+const walk=(x-startX)*2
+slider.scrollLeft=scrollLeft-walk
+})
 
 </script>
 

@@ -17,22 +17,22 @@ flex-direction:column;
 
 .hero{
 background:linear-gradient(135deg,#0b6623,#16a34a);
-padding:70px 20px;
+padding:60px 20px;
 display:flex;
 justify-content:center;
 }
 
 .hero-box{
 background:white;
-padding:35px 50px;
-border-radius:25px;
+padding:30px 40px;
+border-radius:20px;
 text-align:center;
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 
 .hero-box h1{
-font-size:38px;
 color:#0b6623;
+font-size:32px;
 }
 
 /* MENU */
@@ -45,8 +45,8 @@ position:relative;
 
 .menu{
 background:white;
-margin:-30px auto 40px;
-padding:15px 40px;
+margin:-25px auto 40px;
+padding:14px 30px;
 border-radius:40px;
 display:flex;
 gap:30px;
@@ -103,7 +103,7 @@ gap:40px;
 
 transform:translateY(-100%);
 
-transition:0.4s;
+transition:.4s;
 
 z-index:1000;
 
@@ -131,96 +131,85 @@ flex:1;
 /* BLOCO */
 
 .bloco{
-
 background:white;
-
-border-radius:30px;
-
+border-radius:25px;
 padding:25px;
-
 display:flex;
-
 gap:30px;
-
 align-items:center;
-
 box-shadow:0 15px 35px rgba(0,0,0,0.1);
-
-margin-bottom:60px;
-
-min-height:180px;
-
+margin-bottom:40px;
 }
 
 .texto{
 flex:1;
-max-width:350px;
 }
 
 .texto h2{
 color:#0b6623;
-margin-bottom:15px;
+margin-bottom:10px;
 }
 
 .img-box{
-height:200px;
 width:100%;
+height:180px;
 background:#e5e7eb;
-border-radius:25px;
+border-radius:20px;
 }
 
-/* CARROSSEL */
+/* CAROUSEL */
+
+.carousel-container{
+overflow:hidden;
+}
 
 .cards{
 
 display:flex;
 
-gap:25px;
+gap:20px;
 
-overflow:hidden;
+overflow-x:auto;
 
-margin-bottom:90px;
+scroll-behavior:smooth;
 
+padding-bottom:10px;
+
+}
+
+.cards::-webkit-scrollbar{
+display:none;
 }
 
 .card{
-
 background:white;
-
-border-radius:30px;
-
-padding:25px;
-
-text-align:center;
-
-width:260px;
-
-min-width:260px;
-
+border-radius:25px;
+padding:20px;
+width:250px;
+min-width:250px;
 flex-shrink:0;
-
-box-shadow:0 15px 30px rgba(0,0,0,0.1);
-
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 .card-img{
-height:160px;
+height:150px;
 background:#e5e7eb;
-border-radius:25px;
-margin-bottom:15px;
+border-radius:20px;
+margin-bottom:10px;
 }
 
 /* FOOTER */
 
 .rodape{
 background:white;
-padding:25px;
+padding:20px;
 text-align:center;
 color:#555;
-box-shadow:0 -10px 20px rgba(0,0,0,0.08);
+box-shadow:0 -5px 15px rgba(0,0,0,0.08);
 }
 
-/* MOBILE BLOCO */
+/* MOBILE */
 
 @media (max-width:768px){
 
@@ -229,8 +218,21 @@ flex-direction:column;
 text-align:center;
 }
 
+.hero-box{
+padding:25px;
+}
+
+.hero-box h1{
+font-size:26px;
+}
+
 .cards{
-margin-bottom:110px;
+gap:15px;
+}
+
+.card{
+width:220px;
+min-width:220px;
 }
 
 }
