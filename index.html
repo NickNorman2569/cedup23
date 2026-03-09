@@ -22,6 +22,8 @@
 
 </header>
 
+<!-- MENU -->
+
 <div class="menu-container">
 
 <div class="hamburger" onclick="toggleMenu()">
@@ -31,13 +33,16 @@
 </div>
 
 <nav class="menu" id="menu">
+
 <a href="index.html">Início</a>
-<a href="sobre.html">Sobre</a>
-<a href="cursos.html">Cursos</a>
-<a href="contato.html">Contato</a>
+<a href="#">Sobre</a>
+<a href="#">Cursos</a>
+<a href="#">Contato</a>
+
 </nav>
 
 </div>
+
 
 <main>
 
@@ -53,35 +58,12 @@ preparando estudantes para o mercado de trabalho.
 
 </div>
 
-<div class="imagem">
-<div class="img-box"></div>
-</div>
-
 </section>
+
 
 <section class="carousel-container">
 
-<div class="cards" id="carousel">
-
-<div class="card">
-<div class="card-img"></div>
-<h3>Curso 1</h3>
-</div>
-
-<div class="card">
-<div class="card-img"></div>
-<h3>Curso 2</h3>
-</div>
-
-<div class="card">
-<div class="card-img"></div>
-<h3>Curso 3</h3>
-</div>
-
-<div class="card">
-<div class="card-img"></div>
-<h3>Curso 4</h3>
-</div>
+<div class="carousel">
 
 <div class="card">
 <div class="card-img"></div>
@@ -109,57 +91,20 @@ preparando estudantes para o mercado de trabalho.
 
 </main>
 
+
 <footer class="rodape">
 <p>CEDUP Curitibanos • Santa Catarina</p>
 </footer>
 
+
 <script>
 
-/* MENU */
-
 function toggleMenu(){
-const menu=document.getElementById("menu")
+const menu = document.getElementById("menu")
 menu.classList.toggle("ativo")
 }
-
-/* CARROSSEL */
-
-const slider=document.getElementById("carousel")
-
-let isDown=false
-let startX
-let scrollLeft
-
-slider.addEventListener("mousedown",e=>{
-isDown=true
-startX=e.pageX-slider.offsetLeft
-scrollLeft=slider.scrollLeft
-})
-
-slider.addEventListener("mouseleave",()=>{isDown=false})
-slider.addEventListener("mouseup",()=>{isDown=false})
-
-slider.addEventListener("mousemove",e=>{
-if(!isDown) return
-e.preventDefault()
-const x=e.pageX-slider.offsetLeft
-const walk=(x-startX)*2
-slider.scrollLeft=scrollLeft-walk
-})
-
-slider.addEventListener("touchstart",e=>{
-startX=e.touches[0].pageX
-scrollLeft=slider.scrollLeft
-})
-
-slider.addEventListener("touchmove",e=>{
-const x=e.touches[0].pageX
-const walk=(x-startX)*2
-slider.scrollLeft=scrollLeft-walk
-})
 
 </script>
 
 </body>
 </html>
-```
