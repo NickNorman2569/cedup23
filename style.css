@@ -10,8 +10,6 @@ body {
     color: #000000;
 }
 
-/* HERO */
-
 .hero {
     background: linear-gradient(135deg, #0b6623, #16a34a);
     padding: 80px 20px;
@@ -38,8 +36,6 @@ body {
     font-size: 18px;
 }
 
-/* MENU */
-
 .menu {
     background: white;
     margin: -30px auto 40px;
@@ -57,15 +53,12 @@ body {
     font-weight: 600;
 }
 
-/* MAIN */
 
 main {
     max-width: 1100px;
     margin: auto;
     padding: 0 20px;
 }
-
-/* BLOCO */
 
 .bloco {
     background: white;
@@ -102,7 +95,6 @@ main {
     font-weight: 600;
 }
 
-/* CARDS */
 
 .cards {
     display: flex;
@@ -128,8 +120,6 @@ main {
     margin-bottom: 15px;
 }
 
-/* RODAPÉ */
-
 .rodape {
     background: white;
     padding: 25px;
@@ -137,10 +127,6 @@ main {
     color: #555;
     box-shadow: 0 -10px 20px rgba(0,0,0,0.08);
 }
-
-/* ========================= */
-/* RESPONSIVIDADE CELULAR */
-/* ========================= */
 
 @media (max-width: 768px) {
 
@@ -160,16 +146,12 @@ main {
     font-size: 15px;
 }
 
-/* MENU */
-
 .menu {
     flex-direction: column;
     gap: 12px;
     width: 90%;
     text-align: center;
 }
-
-/* BLOCO */
 
 .bloco {
     flex-direction: column;
@@ -181,8 +163,6 @@ main {
     height: 200px;
 }
 
-/* CARDS */
-
 .cards {
     flex-direction: column;
     align-items: center;
@@ -192,10 +172,77 @@ main {
     width: 90%;
 }
 
-/* RODAPÉ */
-
 .rodape {
     padding: 18px;
+}
+
+}
+
+/* layout para rodapé no final */
+
+body{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+main{
+flex:1;
+}
+
+
+/* hamburger */
+
+.menu-container{
+position:relative;
+}
+
+.hamburger{
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
+padding:10px;
+}
+
+.hamburger span{
+width:25px;
+height:3px;
+background:#0b6623;
+}
+
+
+/* cards scroll */
+
+.cards{
+display:flex;
+gap:20px;
+overflow-x:auto;
+padding-bottom:10px;
+}
+
+.card{
+min-width:260px;
+}
+
+
+/* mobile */
+
+@media (max-width:768px){
+
+.menu{
+display:none;
+flex-direction:column;
+text-align:center;
+}
+
+.menu.ativo{
+display:flex;
+}
+
+.hamburger{
+display:flex;
+margin:auto;
 }
 
 }
